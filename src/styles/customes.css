@@ -1,4 +1,13 @@
 header {
+    padding: clamp(5px, 2vw, 10px) 0;
+    position: -webkit-sticky;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 3;
+    background-color: white;
+    
     nav {
         .nav-menu, .nav-btns {
             gap: 10px;
@@ -21,6 +30,65 @@ header {
             input {
                 padding: 8px 0;
                 font-size: 16px;
+            }
+        }
+    }
+}
+
+.hero {
+    background-color: var(--grey-color);
+    position: relative;
+    flex-wrap: wrap;
+    margin-top: 57px;
+
+    .container {
+        container-type: inline-size;
+        padding: 0;
+        gap: 0;
+
+        .hero-text {
+            z-index: 1;
+            padding: 10px;
+
+            h2 {
+                font-size: clamp(2rem, 5vw, 4rem);
+                line-height: 1.02;
+            }
+
+            button {
+                width: 100%;
+            }
+
+            strong {
+                font-size: clamp(2rem, 3vw, 4rem);
+            }
+
+            small {
+                font-size: 10px;
+            }
+        }
+
+        .hero-image {
+            flex: 1;
+            justify-content: end;
+        }
+
+        @container (width > 600px) {
+            .hero-text {
+                padding: 0;
+                flex: 1;
+
+                button {
+                    width: 35%;
+                }
+
+                small {
+                    font-size: 12px;
+                }
+            }
+
+            .hero-image {
+                flex: 1;
             }
         }
     }

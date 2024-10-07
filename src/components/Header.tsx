@@ -7,14 +7,14 @@ import { MdMenu } from "react-icons/md";
 const Header = () => {
     return (
         <header>
-            <nav className="box nowrap">
-                <div className="box nowrap">
-                    <button className="hide-in-large">
+            <nav className="box nowrap container">
+                <div className="box nowrap small-gap">
+                    <button className="icon hide-in-large">
                         <MdMenu />
                     </button>
 
                     <Link href={"/"}>
-                        <h1>
+                        <h1 className="disable-guitters">
                             SHOP.CO
                         </h1>
                     </Link>
