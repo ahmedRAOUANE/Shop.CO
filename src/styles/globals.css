@@ -1,0 +1,172 @@
+:root {
+  /* padding */
+  --main-padding: 1.25rem;
+  /* Default spacing */
+  --secondary-padding: 0.75rem;
+  /* For tighter spacing */
+  --small-padding: 0.5rem;
+  /* For minimal spacing */
+  --large-padding: 2rem;
+  /* For larger sections or containers */
+  --extra-large-padding: 3rem;
+  /* For hero sections or banners */
+
+  /* Flexible padding relative to root font size */
+  --main-padding-responsive: calc(var(--main-padding) + 1vw);
+  /* Scales with viewport */
+  --secondary-padding-responsive: calc(var(--secondary-padding) + 0.5vw);
+  --small-padding-responsive: calc(var(--small-padding) + 0.25vw);
+  --large-padding-responsive: calc(var(--large-padding) + 1.5vw);
+
+  /* color */
+    --main-color: #fff;
+    /* Light gray background */
+    --white-color: #ffffff;
+    --grey-color: #F0F0F0;
+    --black-color: #000;
+    --yellow-color: #FFC633;
+    --red-color: #FF3333;
+    --green-color: #01AB31;
+    --link-color: #4a90e2;
+    /* Soft blue for links */
+    --accent-color: #ffc8b4;
+    /* Coral accent for buttons */
+    --primary-color: #333333;
+    /* Dark gray text */
+    --secondary-color: #767676;
+    /* Lighter gray text */
+
+  /* shadow */
+  --out-line: 0 0 1px 0.7px #0000008a inset;
+  /* Soft inner shadow */
+  --light-shadow: 0 1px 10px 2px #00000040;
+  /* Light drop shadow */
+  --heavy-shadow: 0 1px 8px 3px #00000078;
+  /* Heavy drop shadow */
+
+  /* Borders */
+  --border-radius: 8px;
+  /* Smooth border radius for buttons and cards */
+  --border-radius-small: 4px;
+  --border-radius-large: 12px;
+
+  /* Typography */
+  --font-size-small: 0.875rem;
+  /* For small texts */
+  --font-size-base: 1rem;
+  /* Base font size */
+  --font-size-large: 1.25rem;
+  /* For headings */
+  --line-height: 1.6;
+  /* For comfortable reading */
+}
+
+body {
+  height: 100vh;
+  background-color: var(--main-color);
+
+  /* font */
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: var(--line-height);
+  font-weight: 400;
+
+  /* text */
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  /* spacing */
+  letter-spacing: 1px;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  color: inherit;
+
+  /* transition */
+  transition: .1s linear all;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-size: var(--font-size-large);
+  margin-top: var(--small-padding);
+  margin-bottom: var(--secondary-padding);
+}
+
+/* h1 {
+  font-size: 3.2em;
+} */
+
+input,
+textarea {
+  padding: calc(var(--secondary-padding)) calc(var(--small-padding));
+  border-radius: var(--border-radius);
+  outline: none;
+  border: none;
+  /* flex: 1; */
+  font-size: 20px;
+  max-width: 100%;
+  width: 100%;
+  background-color: var(--white-color);
+  resize: vertical;
+  color: black;
+}
+
+input[name="checbox"] {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 20px;
+  height: 20px;
+}
+
+/* header {
+  padding: calc(var(--secondary-padding)) var(--small-padding);
+} */
+
+img {
+  max-width: 100%;
+  height: unset;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+code {
+  font-family: Consolas, "courier new";
+  padding: 2px;
+  font-size: 105%;
+  overflow: scroll;
+  width: 100%;
+}
+
+select {
+  background-color: transparent;
+  outline: none;
+  border: none;
+  
+  &:focus {
+    outline: none;
+  }
+}
+
+svg {
+  --icon-wheight: 24px;
+  width: var(--icon-wheight);
+  height: var(--icon-wheight);
+}

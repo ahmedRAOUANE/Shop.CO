@@ -1,0 +1,103 @@
+button,
+.btn,
+input[type="button"],
+input[type="submit"] {
+    border-radius: 8px;
+    border: 1px solid transparent;
+    padding: var(--button-secondary-padding);
+    font-size: 1em;
+    font-weight: 500;
+    font-family: inherit;
+    background-color: #e6f0ff;
+    color: var(--primary-color);
+    cursor: pointer;
+    transition: border-color 0.25s;
+    position: relative;
+
+    &.rounded {
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+    }
+
+    &.primary {
+        background-color: var(--primary-color);
+    }
+
+    &.link {
+        color: var(--link-color);
+        padding: 0;
+        background-color: transparent;
+
+        &:hover {
+            background-color: transparent;
+            text-decoration: underline;
+        }
+    }
+
+    &:hover {
+        background-color: #bbd2f5;
+    }
+
+    &.delete {
+        background-color: red;
+        position: absolute;
+        top: -15px;
+        right: -15px;
+        border-radius: 50%;
+        width: 35px;
+        height: 35px;
+    }
+
+    &.danger {
+        background-color: red;
+    }
+
+    &.success {
+        background-color: green;
+    }
+
+    &.active {
+        background-color: #bbd2f5;
+        color: #000000;
+    }
+
+    &.icon {
+        background-color: transparent;
+        padding: 0;
+        margin: 0;
+        overflow: hidden;
+        color: var(--primary-color);
+
+        &:hover {
+            background-color: transparent;
+
+            svg {
+                fill: var(--secondary-color);
+            }
+        }
+    }
+}
+
+.btn-group {
+    gap: 5px;
+
+    &.transparent {
+        background-color: transparent;
+    }
+
+    &.min-padding {
+        padding: 5px 15px;
+    }
+
+    &.switch {
+        border-radius: 10px;
+        gap: 0;
+        overflow: hidden;
+
+        button {
+            border-radius: 0;
+            flex: 1;
+        }
+    }
+}
