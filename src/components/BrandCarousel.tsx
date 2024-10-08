@@ -11,9 +11,17 @@ import brand4 from "@/assets/brand4.png";
 import brand5 from "@/assets/brand5.png";
 
 const BrandCarousel = () => {
+
     return (
         <div style={{ height: "100px", background: "var(--black-color)" }}>
-            <Marquee velocity={25} direction="rtl" scatter={false} resetAfterTries={200}>
+            <Marquee 
+                velocity={25} 
+                direction="rtl" 
+                resetAfterTries={200} 
+                scatterRandomly={false}
+                onInit={() => console.log("Marquee initialized")}
+                onFinish={() => console.log("Marquee finished")}
+            >
                 <div style={{ padding: "0 20px", height: "100%" }}>
                     <Image src={brand1} alt="" height={50} style={{margin: "25px 0"}} />
                 </div>
