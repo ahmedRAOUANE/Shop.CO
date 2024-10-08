@@ -1,5 +1,6 @@
 import image from "@/assets/image1.png";
 import Image from "next/image";
+import BrandCarousel from "./BrandCarousel";
 
 const Hero = () => {
     return (
@@ -35,6 +36,7 @@ const Hero = () => {
                     <Image src={image} alt="" height={500} />
                 </div>
             </div>
+            <BrandCarousel />
         </div>
     )
 }
