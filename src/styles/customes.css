@@ -93,3 +93,72 @@ header {
         }
     }
 }
+
+.product-list {
+    h2 {
+        font-size: clamp(2rem, 5vw, 4rem);
+        margin-top: 40px;
+    }
+
+    .cards-list {
+        align-items: stretch;
+
+        .card {
+            .card-image {
+                background-color: var(--grey-color);
+
+                img {
+                    height: 250px;
+                }
+            }
+
+            .card-body {
+                flex: calc(1/2);
+
+                .card-title {
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    height: 30px;
+                }
+
+                .card-price {
+                    strong {
+                        font-size: 20px;
+                    }
+
+                    .depricated {
+                        text-decoration: line-through;
+                        color: var(--secondary-color);
+                    }
+
+                    .small {
+                        background-color: #ff33331a;
+                        color: var(--red-color);
+                        font-size: 14px;
+                        padding: 0px 7px;
+                    }
+                }
+            }
+        }
+    }
+
+    @media (max-width: 767px) {
+        .card:nth-child(even) {
+            display: none;
+        }
+
+        button {
+            width: 100%;
+        }
+    }
+}
+
+.rating-stars {
+    span {
+        font-size: 14px;
+
+        svg {
+            width: 18px;
+        }
+    }
+}
