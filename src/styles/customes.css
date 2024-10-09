@@ -162,3 +162,40 @@ header {
         }
     }
 }
+
+.dress-style {
+    background-color: var(--grey-color);
+    
+    h2 {
+        font-size: clamp(2rem, 5vw, 4rem);
+    }
+    
+    .cards-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        container-type: inline-size;
+
+        a:nth-child(2), a:nth-child(3) {
+            grid-column: span 2 ;
+        }
+
+        a {
+            border-radius: 15px;
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+
+            h3 {
+                font-size: clamp(1.5rem, 5vw, 2.5rem);
+            }
+        }
+
+        @container (width < 500px) {
+            a, a:nth-child(2), a:nth-child(3) {
+                grid-column: span 3;
+                width: 100%;
+            }
+        }
+    }
+}

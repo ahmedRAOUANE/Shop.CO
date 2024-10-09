@@ -1,15 +1,15 @@
-import Header from "@/components/Header";
+import DressStyle from "@/components/DressStyle";
 import Hero from "@/components/Hero";
 import NewArraivals from "@/components/NewArraivals";
 import TopSelling from "@/components/TopSelling";
 
 export default function Home() {
   return (
-    <div>
-      <Header />
+    <main className="box column">
       <Hero />
       <NewArraivals />
       <TopSelling />
-    </div>
+      <DressStyle />
+    </main>
   );
 }

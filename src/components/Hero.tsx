@@ -4,7 +4,7 @@ import BrandCarousel from "./BrandCarousel";
 
 const Hero = () => {
     return (
-        <div className='hero full-with viewport-height'>
+        <section className='hero full-with viewport-height'>
             <div className="container full-height box">
                 <div className="hero-text box column">
                     <h2 className="full-width text-start disable-guitters">FIND CLOTHES THAT MATCHES YOUR STYLE</h2>
@@ -37,7 +37,7 @@ const Hero = () => {
                 </div>
             </div>
             <BrandCarousel />
-        </div>
+        </section>
     )
 }
 

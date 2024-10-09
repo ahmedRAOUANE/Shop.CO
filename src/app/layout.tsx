@@ -8,6 +8,7 @@ import "../styles/layout.css";
 import "../styles/button.css";
 import "../styles/modal.css";
 import "../styles/customes.css";
+import Header from "@/components/Header";
 
 export const metadata: Metadata = {
   title: "SHOP.CO",
@@ -24,6 +25,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.className}`}>
+        <Header />
         {children}
       </body>
     </html>

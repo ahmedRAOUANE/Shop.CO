@@ -26,7 +26,7 @@
     box-shadow: var(--out-line), var(--light-shadow);
     background-color: var(--white-color);
     color: var(--primary-color);
-    border-radius: 7px;
+    border-radius: 20px;
 }
 
 .scroller {
@@ -116,7 +116,7 @@
 }
 
 .no-shadow {
-    box-shadow: var(--out-line);
+    box-shadow: none;
 }
 
 .m-0 {

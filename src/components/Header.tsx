@@ -48,12 +48,12 @@ const Header = () => {
                         <button className="hide-in-large icon">
                             <CiSearch />
                         </button>
-                        <button className="icon">
+                        <Link href={"#"} className="icon">
                             <IoCartOutline />
-                        </button>
-                        <button className="icon">
+                        </Link>
+                        <Link href={"#"} className="icon">
                             <FaRegUserCircle />
-                        </button>
+                        </Link>
                     </div>
                 </div>
             </nav>

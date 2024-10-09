@@ -8,7 +8,7 @@ const NewArraivals = async () => {
     const products: Product[] = await res.json();
 
     return (
-        <div className="container">
+        <section className="container">
             <div className="box column product-list">
                 <h2>NEW ARRIVALS</h2>
                 <div className="cards-list box small-gap">
@@ -18,7 +18,7 @@ const NewArraivals = async () => {
                 </div>
                 <button className='rounded primary outline'>View More</button>
             </div>
-        </div>
+        </section>
     )
 }
 
