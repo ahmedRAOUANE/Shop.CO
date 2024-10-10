@@ -1,4 +1,5 @@
 import DressStyle from "@/components/DressStyle";
+import HappyUsersComments from "@/components/HappyUsersComments";
 import Hero from "@/components/Hero";
 import NewArraivals from "@/components/NewArraivals";
 import TopSelling from "@/components/TopSelling";
@@ -10,6 +11,7 @@ export default function Home() {
       <NewArraivals />
       <TopSelling />
       <DressStyle />
+      <HappyUsersComments />
     </main>
   );
 }

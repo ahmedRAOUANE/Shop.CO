@@ -67,8 +67,16 @@
     justify-content: flex-start;
 }
 
+.jc-end {
+    justify-content: flex-end;
+}
+
 .ai-start {
     align-items: flex-start;
+}
+
+.ai-end {
+    align-items: flex-end;
 }
 
 .center-x {
