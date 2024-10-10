@@ -213,6 +213,7 @@ header {
         }
     }
 }
+
 .happy-custommers {
     .comments {
         .comment-container {
@@ -246,5 +247,31 @@ header {
                 }
             }
         }
+    }
+}
+
+footer {
+    background-color: var(--grey-color);
+    margin-top: calc(var(--extra-large-padding) * 3);
+    padding-top: calc(var(--extra-large-padding) * 1.5);
+    position: relative;
+
+    .stay-up-to-date {
+        background-color: var(--black-color);
+        color: var(--white-color);
+        position: absolute;
+        top: -20%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .footer-links {
+        h2 {
+            font-size: 20px;
+        }
+    }
+
+    .copyright-and-payment {
+        margin-top: var(--large-padding);
     }
 }
