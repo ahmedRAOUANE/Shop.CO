@@ -36,7 +36,7 @@
 
 .small {
     font-size: 18px;
-    background: var(--main-color);
+    background: var(--grey-color);
     padding: 5px 10px;
     border-radius: 20px;
 }

@@ -1,15 +1,14 @@
 import { Comment } from '@/utils/types';
 
 import Comments from './Comments';
+import { getComments } from '@/utils/getData';
 
 const HappyUsersComments = async () => {
-    // dummy comments from jsonplaceholder api
-    const res = await fetch("https://jsonplaceholder.typicode.com/comments?_limit=5");
-    const comments: Comment[] = await res.json();
+    const comments: Comment[] = await getComments();
 
     return (
         <section className='happy-custommers box column container '>
-            <Comments comments={comments} />
+            <Comments comments={comments} title='our happy custommers' />
         </section>
     )
 }

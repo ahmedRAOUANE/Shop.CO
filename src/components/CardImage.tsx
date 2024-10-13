@@ -1,9 +1,8 @@
-import Image from 'next/image'
-import React from 'react'
+import Image from 'next/image';
 
-const CardImage = ({src, alt}: {src: string, alt: string}) => {
+const CardImage = ({ src, alt, className = "" }: { src: string, alt: string, className?: string }) => {
   return (
-      <div className="card-image paper outline full-width">
+      <div className={`card-image paper outline full-width box center-x center-y ${className}`}>
           <Image
               src={src}
               alt={alt}

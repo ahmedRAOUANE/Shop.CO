@@ -21,6 +21,16 @@ input[type="submit"] {
     &.primary {
         background-color: var(--white-color);
         color: var(--black-color);
+        cursor: auto;
+        
+            &, &[type="submit"] {
+                cursor: pointer;
+            }
+        
+            &:hover {
+                background-color: var(--grey-color);
+                color: var(--black-color);
+            }
     }
 
     &.link {
@@ -36,6 +46,7 @@ input[type="submit"] {
 
     &:hover {
         background-color: #000000bd;
+        color: var(--white-color);
     }
 
     &.delete {
@@ -97,6 +108,16 @@ input[type="submit"] {
         button {
             border-radius: 0;
             flex: 1;
+        }
+    }
+
+    button {
+        background-color: var(--grey-color);
+        color: var(--black-color);
+
+        &.active {
+            background-color: var(--black-color);
+            color: var(--grey-color);
         }
     }
 }

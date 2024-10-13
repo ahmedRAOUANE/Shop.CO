@@ -8,17 +8,66 @@
     }
 }
 
-.slick-track {
-    display: flex;
-    width: unset !important;
+.comments {
+    .comment-container {
+        .comment {
+            margin-right: var(--main-padding);
+            overflow: hidden;
+            height: 150px;
+            width: 300px;
 
-    /* .slick-slide {
-        width: 300px;
+            .comment-header {
+                overflow: hidden;
+                max-width: 100%;
 
-        &>* {
-            width: 100%;
+                h3 {
+                    font-size: 15px;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+                    overflow: hidden;
+                }
+            }
+
+            .comment-body {
+                overflow: hidden;
+                max-width: 100%;
+
+                p {
+                    font-size: 13px;
+                    text-overflow: ellipsis;
+                    overflow: hidden;
+                }
+            }
         }
-    } */
+    }
+}
+
+.slick-slider {
+    max-width: 100%;
+    
+    .slick-track {
+        display: flex;
+        width: unset !important;
+    }
+}
+
+.card-image {
+    background-color: var(--grey-color);
+    height: 250px;
+
+    &.small-card {
+        max-width: 100px;
+        height: unset;
+    }
+
+    &.large-card {
+        height: 100%;
+        width: unset;
+    }
+
+    img {
+        height: 100%;
+    }
 }
 
 /* website sections */
@@ -131,14 +180,6 @@ header {
         align-items: stretch;
 
         .card {
-            .card-image {
-                background-color: var(--grey-color);
-
-                img {
-                    height: 250px;
-                }
-            }
-
             .card-body {
                 flex: calc(1/2);
 
@@ -214,42 +255,6 @@ header {
     }
 }
 
-.happy-custommers {
-    .comments {
-        .comment-container {
-            .comment {
-                margin-right: var(--main-padding);
-                overflow: hidden;
-                height: 150px;
-                width: 300px;
-
-                .comment-header {
-                    overflow: hidden;
-                    max-width: 100%;
-
-                    h3 {
-                        font-size: 15px;
-                        white-space: nowrap;
-                        text-overflow: ellipsis;
-                        overflow: hidden;
-                    }
-                }
-
-                .comment-body {
-                    overflow: hidden;
-                    max-width: 100%;
-
-                    p {
-                        font-size: 13px;
-                        text-overflow: ellipsis;
-                        overflow: hidden;
-                    }
-                }
-            }
-        }
-    }
-}
-
 footer {
     background-color: var(--grey-color);
     margin-top: calc(var(--extra-large-padding) * 3);
@@ -273,5 +278,22 @@ footer {
 
     .copyright-and-payment {
         margin-top: var(--large-padding);
+    }
+}
+
+.product-details {
+    margin-top: 57px;
+
+    .colors {
+        .color {
+            --color-wheight: 40px;
+            width: var(--color-wheight);
+            height: var(--color-wheight);
+            border-radius: 50%;
+
+            svg {
+                fill: var(--white-color);
+            }
+        }
     }
 }

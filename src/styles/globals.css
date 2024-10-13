@@ -22,7 +22,7 @@
     --main-color: #fff;
     /* Light gray background */
     --white-color: #ffffff;
-    --grey-color: #F0F0F0;
+    --grey-color: #f0f0f0;
     --black-color: #000;
     --yellow-color: #FFC633;
     --red-color: #FF3333;
@@ -33,7 +33,7 @@
     /* Coral accent for buttons */
     --primary-color: #333333;
     /* Dark gray text */
-    --secondary-color: #767676;
+    --secondary-color: hsl(0, 0%, 46%);
     /* Lighter gray text */
 
   /* shadow */

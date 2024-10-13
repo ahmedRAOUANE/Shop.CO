@@ -1,11 +1,9 @@
-import React from 'react';
 import ProductCard from './ProductCard';
 import { Product } from '@/utils/types';
+import { getProducts } from '@/utils/getData';
 
 const TopSelling = async () => {
-    // dummy data from fakestore API
-    const res = await fetch("https://fakestoreapi.com/products/category/men's clothing?limit=4");
-    const products: Product[] = await res.json();
+    const products: Product[] = await getProducts();
 
     return (
         <section className="container">
