@@ -4,9 +4,9 @@ import CardImage from './CardImage';
 import RatingStars from './RatingStars';
 import CardPrice from './CardPrice';
 
-const ProductCard = ({ productData }: { productData: Product }) => {
+const ProductCard = ({ productData, className }: { productData: Product, className?: string }) => {
     return (
-        <Link href={`details/${productData.id}`} className="card box column small-gap full-width small-gap">
+        <Link href={`details/${productData.id}`} className={`card box small-gap full-width small-gap ${className}`}>
             <CardImage src={productData.image} alt={productData.title} />
 
             <div className="card-body">

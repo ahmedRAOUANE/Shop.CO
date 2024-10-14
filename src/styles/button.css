@@ -60,7 +60,11 @@ input[type="submit"] {
     }
 
     &.danger {
-        background-color: red;
+        background-color: var(--red-color);
+        
+            &:hover svg {
+                fill: var(--red-color) !important;
+            }
     }
 
     &.success {

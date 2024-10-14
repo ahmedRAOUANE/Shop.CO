@@ -13,7 +13,8 @@ export type Product = {
         persontage: number,
         oldPrice: number,
         newPrice: number,
-    }
+    },
+    images: []
 }
 
 export type Comment = {

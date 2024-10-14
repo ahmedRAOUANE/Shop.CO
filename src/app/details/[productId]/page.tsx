@@ -1,9 +1,9 @@
-import CardImage from '@/components/CardImage';
 import CardPrice from '@/components/CardPrice';
 import ColorSelecting from '@/components/ColorSelecting';
 import Comments from '@/components/Comments';
-import CountAnAddToChart from '@/components/CountAnAddToChart';
+import Counter from '@/components/Counter';
 import ProductCard from '@/components/ProductCard';
+import ProductImages from '@/components/ProductImages';
 import RatingStars from '@/components/RatingStars';
 import SizeSelecting from '@/components/SizeSelecting';
 import { getComments, getProducts, getSingleProduct } from '@/utils/getData';
@@ -17,19 +17,11 @@ const page = async ({ params: { productId } }: { params: { productId: string } }
   const products: Product[] = await getProducts();
 
   return (
-    <div className='product-details container'>
+    <main className='product-details container'>
       <div className="box column">
         <div className="box full-width">
           <div className="box small-gap full-width" style={{ alignItems: "stretch" }}>
-            <div className="box column small-gap">
-              <CardImage src={product.image} alt={product.title} className='small-card' />
-              <CardImage src={product.image} alt={product.title} className='small-card' />
-              <CardImage src={product.image} alt={product.title} className='small-card' />
-            </div>
-
-            <div className="full-width">
-              <CardImage src={product.image} alt={product.title} className='large-card' />
-            </div>
+            <ProductImages product={product} />
           </div>
 
           <div className="box column full-width">
@@ -45,7 +37,15 @@ const page = async ({ params: { productId } }: { params: { productId: string } }
         <div className="box full-width">
           <ColorSelecting />
           <SizeSelecting />
-          <CountAnAddToChart />
+
+          <div className="count">
+            <h3>Add To Chart</h3>
+
+            <div className="box small-gap">
+              <Counter />
+              <button className='full-width rounded'>Add To Chart</button>
+            </div>
+          </div>
         </div>
 
         <div className="box column full-width">
@@ -57,14 +57,14 @@ const page = async ({ params: { productId } }: { params: { productId: string } }
 
           <div className="cards-list box small-gap">
             {products.map((product: Product) => (
-              <ProductCard key={product.id} productData={product} />
+              <ProductCard key={product.id} productData={product} className='column' />
             ))}
           </div>
 
           <button className='rounded primary outline'>View More</button>
         </div>
       </div>
-    </div>
+    </main>
   )
 }
 

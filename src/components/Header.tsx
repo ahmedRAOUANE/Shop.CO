@@ -48,7 +48,7 @@ const Header = () => {
                         <button className="hide-in-large icon">
                             <CiSearch />
                         </button>
-                        <Link href={"#"} className="icon">
+                        <Link href={"/cart"} className="icon">
                             <IoCartOutline />
                         </Link>
                         <Link href={"#"} className="icon">
