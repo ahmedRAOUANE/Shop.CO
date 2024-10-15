@@ -14,7 +14,7 @@ const page = async ({ params: { productId } }: { params: { productId: string } }
 
   const comments: Comment[] = await getComments();
 
-  const products: Product[] = await getProducts();
+  const products: Product[] = await getProducts(4);
 
   return (
     <main className='product-details container'>

@@ -20,11 +20,11 @@ const Counter = () => {
 
     return (
         <div className="small box small-gap">
-            <button className="icon" onClick={decrease}>
+            <button className="icon box" onClick={decrease}>
                 <FiMinus />
             </button>
             <span>{count}</span>
-            <button className="icon" onClick={increase}>
+            <button className="icon box" onClick={increase}>
                 <FiPlus />
             </button>
         </div>

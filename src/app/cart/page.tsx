@@ -24,18 +24,18 @@ const summaryContent = [
 ]
 
 const page = async () => {
-    const products: Product[] = await getProducts();
+    const products: Product[] = await getProducts(4);
 
     const total = summaryContent.reduce((acc, item) => acc + item.value, 0);
 
     return (
-        <main className="cart container box column">
-            <h1 className="full-width flex-0">your cart</h1>
+        <main className="cart container box column small-gap">
+            <h1 className="full-width flex-0 disable-guitters">your cart</h1>
 
             <div className="box full-width ai-start">
                 <div className="card-group box column outline paper full-width">
                     {products.map(product => (
-                        <div key={product.id} className="card-container box nowrap">
+                        <div key={product.id} className="card-container box nowrap full-width">
                             <ProductCard productData={product} className="ai-start" />
                             <div className="box column ai-end">
                                 <button className="icon danger">

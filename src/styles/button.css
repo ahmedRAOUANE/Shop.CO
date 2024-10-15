@@ -91,6 +91,14 @@ input[type="submit"] {
             }
         }
     }
+
+    &.transparent {
+        background-color: transparent;
+    
+        &:hover {
+            background-color: var(--grey-color);
+        }
+    }
 }
 
 .btn-group {

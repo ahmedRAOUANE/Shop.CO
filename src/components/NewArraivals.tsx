@@ -3,7 +3,7 @@ import { Product } from '@/utils/types';
 import { getProducts } from '@/utils/getData';
 
 const NewArraivals = async () => {
-    const products: Product[] = await getProducts();
+    const products: Product[] = await getProducts(4);
 
     return (
         <section className="container">

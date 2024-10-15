@@ -295,10 +295,9 @@ footer {
         }
     }
 }
+
 .cart {
     .card-group {
-
-
         .card-container {
             position: relative;
             align-items: stretch;
@@ -325,11 +324,47 @@ footer {
     }
 
     .summary {
-        position: sticky;
-        top: 0;
+        flex: .5;
 
         h3 {
             margin-bottom: var(--secondary-padding);
+        }
+    }
+}
+
+.category {
+    .filter-container {
+        flex: .33;
+
+        .price-range {
+            .box {
+                gap: 0;
+                padding: 0;
+            }
+        }
+    }
+
+    .cards-container {
+        .cards-container-header {
+            .small {
+                font-size: 14px;
+    
+                select {
+                    font-weight: bold;
+                }
+            }
+        }
+    
+        .cards-container-body {
+            align-items: stretch;
+    
+            .card {
+                flex: 1 0 25%;
+    
+                .card-image {flex: 1;}
+    
+                .card-body {flex: 1;}
+            }
         }
     }
 }

@@ -13,7 +13,7 @@ const SizeSelecting = () => {
 
     return (
         <div className="sizes">
-            <h3>Chooze Size</h3>
+            <h3>Size</h3>
             <div className="btn-group box small-gap">
                 {availableSizes.map((size, idx) => (
                     <button

@@ -32,7 +32,7 @@ const DressStyle = () => {
                 <h2 className='text-center'>BROWSE BY dress STYLE</h2>
                 <div className="cards-container full-width">
                     {linksData.map((link, idx) => (
-                        <Link key={idx} href={"#"} className="paper no-shadow" style={{ backgroundImage: `url(${link.image})` }}>
+                        <Link key={idx} href={`category/${link.title}`} className="paper no-shadow" style={{ backgroundImage: `url(${link.image})` }}>
                             <h3 className='full-width text-start disable-guitters'>{link.title}</h3>
                         </Link>
                     ))}

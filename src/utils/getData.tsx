@@ -4,9 +4,9 @@ export const getSingleProduct = async (productId: string) => {
     return await productRes.json();
 }
 
-export const getProducts = async () => {
+export const getProducts = async (limit: number) => {
     // dummy data from fakestore API
-    const productsRes = await fetch("https://fakestoreapi.com/products/category/men's clothing?limit=4");
+    const productsRes = await fetch(`https://fakestoreapi.com/products?limit=${limit}`);
     return await productsRes.json();
 }
 

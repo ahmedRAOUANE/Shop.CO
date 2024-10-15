@@ -20,8 +20,8 @@ const Header = () => {
                     </Link>
                 </div>
 
-                <div className="box full-width nowrap">
-                    <div className="nav-menu box jc-start">
+                <div className="box full-width nowrap jc-end">
+                    {/* <div className="nav-menu box jc-start">
                         <select name="shop" id="shop" className="hide-in-small">
                             <option value="shop">Shop</option>
                         </select>
@@ -37,21 +37,21 @@ const Header = () => {
                                 <Link href={"#"}>Brands</Link>
                             </li>
                         </ul>
-                    </div>
+                    </div> */}
 
-                    <div className="search-bar box jc-start full-width nowrap paper disable-guitters outline hide-in-small">
+                    <div className="search-bar box jc-start nowrap paper disable-guitters outline hide-in-small">
                         <CiSearch />
                         <input type="search" name="search" id="searchInput" className="transparent" placeholder="Search Products.." />
                     </div>
 
                     <div className="nav-btns box nowrap">
-                        <button className="hide-in-large icon">
+                        <button className="hide-in-large icon box">
                             <CiSearch />
                         </button>
-                        <Link href={"/cart"} className="icon">
+                        <Link href={"/cart"} className="icon box">
                             <IoCartOutline />
                         </Link>
-                        <Link href={"#"} className="icon">
+                        <Link href={"#"} className="icon box">
                             <FaRegUserCircle />
                         </Link>
                     </div>
