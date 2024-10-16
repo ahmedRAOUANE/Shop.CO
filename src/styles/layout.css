@@ -173,6 +173,10 @@
     }
 }
 
+.rounded {
+    border-radius: var(--main-padding) !important;
+}
+
 .norounded {
     border-radius: 0px;
 }

@@ -20,7 +20,7 @@ const Footer = () => {
                 </h2>
 
                 <form className="box column full-width">
-                    <input type="email" placeholder='Enter Your Email' className='btn primary rounded' />
+                    <input type="email" placeholder='Enter Your Email' className='rounded' />
                     <input type="submit" value="Subscribe To Newsletter" className='primary rounded' />
                 </form>
             </div>

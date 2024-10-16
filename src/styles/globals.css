@@ -118,7 +118,7 @@ h2 {
 
 input,
 textarea {
-  padding: calc(var(--secondary-padding)) calc(var(--small-padding));
+  padding: var(--small-padding) var(--secondary-padding);
   border-radius: var(--border-radius);
   outline: none;
   border: none;

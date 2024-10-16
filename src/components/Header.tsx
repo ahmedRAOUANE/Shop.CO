@@ -51,7 +51,7 @@ const Header = () => {
                         <Link href={"/cart"} className="icon box">
                             <IoCartOutline />
                         </Link>
-                        <Link href={"#"} className="icon box">
+                        <Link href={"/login"} className="icon box">
                             <FaRegUserCircle />
                         </Link>
                     </div>

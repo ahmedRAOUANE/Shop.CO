@@ -14,10 +14,6 @@ input[type="submit"] {
     transition: border-color 0.25s;
     position: relative;
 
-    &.rounded {
-        border-radius: var(--main-padding);
-    }
-
     &.primary {
         background-color: var(--white-color);
         color: var(--black-color);
@@ -37,8 +33,9 @@ input[type="submit"] {
         color: var(--link-color);
         padding: 0;
         background-color: transparent;
-
+        
         &:hover {
+            color: var(--link-color);
             background-color: transparent;
             text-decoration: underline;
         }
