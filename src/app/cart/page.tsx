@@ -75,7 +75,7 @@ const page = async () => {
                                 <button className="rounded">Apply</button>
                             </div>
 
-                            <Link href={"#"} className="btn rounded full-width box center-x center-y">
+                            <Link href={"/checkout"} className="btn rounded full-width box center-x center-y">
                                 <span>Go To Checkout</span>
                                 <FaArrowRightLong />
                             </Link>
