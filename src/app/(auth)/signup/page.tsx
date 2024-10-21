@@ -1,8 +1,9 @@
 "use client";
 
-import { UserAuth } from '@/context/authContext';
+// import { UserAuth } from '@/context/authContext';
 import { signup } from '@/utils/auth';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import React, { useRef } from 'react';
 
 const SignUp = () => {
@@ -11,7 +12,11 @@ const SignUp = () => {
     const passwordRef = useRef<HTMLInputElement>(null);
     const usernameRef = useRef<HTMLInputElement>(null);
 
-    const { signInWithGoogle } = UserAuth();
+    const router = useRouter();
+
+
+    /* the login with google feature have been commented untill we complete the auth logic */
+    // const { signInWithGoogle } = UserAuth();
 
     const handleSignup = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
@@ -26,7 +31,9 @@ const SignUp = () => {
                 username: usernameRef.current?.value
             }
 
-            await signup(creadencials);
+            await signup(creadencials).then(() => {
+                router.push('/profile');
+            });
         } catch (error) {
             console.log(`Error logging in: ${error}`);
         }
@@ -44,11 +51,11 @@ const SignUp = () => {
                     <input className='rounded btn full-width outline' type="submit" value="Sign up" />
                 </form>
 
-                <div className="or box center-x full-width nowrap">
+                {/* <div className="or box center-x full-width nowrap">
                     <p>Or</p>
                 </div>
 
-                <button onClick={signInWithGoogle} className='full-width rounded danger'>Login With Google</button>
+                <button onClick={signInWithGoogle} className='full-width rounded danger'>Login With Google</button> */}
 
                 <div className="box column small-gap">
                     <p>already have an account? <Link href={"login"} className='btn link'>Login</Link></p>

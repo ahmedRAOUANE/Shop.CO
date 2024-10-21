@@ -1,5 +1,6 @@
 import UserData from '@/components/UserData'
-import React from 'react'
+import UserPaymentCards from '@/components/UserPaymentCards';
+import React from 'react';
 
 const Profile = () => {
     return (
@@ -7,6 +8,7 @@ const Profile = () => {
             <h2 className='disable-guitters full-width flex-0'>Profile</h2>
 
             <UserData />
+            <UserPaymentCards />
         </main>
     )
 }

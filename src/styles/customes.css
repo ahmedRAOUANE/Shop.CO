@@ -70,17 +70,29 @@
     }
 }
 
-.avatar-placeholder {
+.avatar {
+    flex: .25;
     background-color: var(--grey-color);
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    overflow: hidden;
 
-    p {
-        text-transform: capitalize;
+    .avatar-placeholder {
+        background-color: var(--grey-color);
+
+        p {
+            text-transform: capitalize;
+            font-weight: bold;
+            font-size: 100px;
+            color: var(--primary-color);
+        }
     }
 }
+
 /* website sections */
 main {
     overflow: hidden;
-    margin-top: 57px !important;
+    margin-top: 70px !important;
 
     * {
         max-width: 100%;
@@ -377,8 +389,6 @@ footer {
 }
 
 .auth {
-    margin-top: 70px !important;
-
     p {
         font-size: 14px;
     }
