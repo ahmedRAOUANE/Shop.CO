@@ -1,6 +1,6 @@
 "use client";
 
-import { UserAuth } from "@/context/authContext";
+import { UserAuth } from "@/context/AuthContext";
 import Link from "next/link";
 import { CiSearch } from "react-icons/ci";
 import { FaRegUserCircle } from "react-icons/fa";

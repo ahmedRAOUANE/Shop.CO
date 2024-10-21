@@ -1,12 +1,12 @@
 "use client";
 
-import { UserAuth } from '@/context/authContext';
 import Image from 'next/image'
 import React from 'react';
 
 import img from '@/assets/image1.png';
 import { logout } from '@/utils/auth';
 import { useRouter } from 'next/navigation';
+import { UserAuth } from '@/context/AuthContext';
 
 const UserData = () => {
     const { user } = UserAuth();
