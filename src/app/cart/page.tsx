@@ -1,6 +1,6 @@
 import Counter from "@/components/Counter";
 import ProductCard from "@/components/ProductCard";
-import { getProducts } from "@/utils/getData"
+import { getProducts } from "@/utils/getData";
 import { Product } from "@/utils/types";
 import Link from "next/link";
 import { BsFillTagFill } from "react-icons/bs";

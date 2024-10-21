@@ -1,13 +1,35 @@
 "use client";
 
-import Link from 'next/link'
-import React from 'react'
+import { UserAuth } from '@/context/authContext';
+import { signup } from '@/utils/auth';
+import Link from 'next/link';
+import React, { useRef } from 'react';
 
-const page = () => {
-    const handleSignup = (e: React.FormEvent<HTMLFormElement>) => {
+const SignUp = () => {
+
+    const emailRef = useRef<HTMLInputElement>(null);
+    const passwordRef = useRef<HTMLInputElement>(null);
+    const usernameRef = useRef<HTMLInputElement>(null);
+
+    const { signInWithGoogle } = UserAuth();
+
+    const handleSignup = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
 
         // signup logic...
+        if (!emailRef.current?.value || !passwordRef.current?.value || !usernameRef.current?.value) return
+
+        try {
+            const creadencials = {
+                email: emailRef.current?.value,
+                password: passwordRef.current?.value,
+                username: usernameRef.current?.value
+            }
+
+            await signup(creadencials);
+        } catch (error) {
+            console.log(`Error logging in: ${error}`);
+        }
     }
 
     return (
@@ -16,9 +38,9 @@ const page = () => {
                 <h1>Signup</h1>
 
                 <form className="box column" onSubmit={handleSignup}>
-                    <input className='rounded full-width outline' type="text" name="username" id="username" placeholder='username' />
-                    <input className='rounded full-width outline' type="email" name="userEmail" id="userEmail" placeholder='Enter Email' />
-                    <input className='rounded full-width outline' type="password" name="password" id="password" placeholder='Password' />
+                    <input ref={usernameRef} className='rounded full-width outline' type="text" name="username" id="username" placeholder='username' />
+                    <input ref={emailRef} className='rounded full-width outline' type="email" name="userEmail" id="userEmail" placeholder='Enter Email' />
+                    <input ref={passwordRef} className='rounded full-width outline' type="password" name="password" id="password" placeholder='Password' />
                     <input className='rounded btn full-width outline' type="submit" value="Sign up" />
                 </form>
 
@@ -26,7 +48,7 @@ const page = () => {
                     <p>Or</p>
                 </div>
 
-                <button className='full-width danger'>Login With Google</button>
+                <button onClick={signInWithGoogle} className='full-width rounded danger'>Login With Google</button>
 
                 <div className="box column small-gap">
                     <p>already have an account? <Link href={"login"} className='btn link'>Login</Link></p>
@@ -36,5 +58,5 @@ const page = () => {
     )
 }
 
-export default page;
+export default SignUp;
 

@@ -1,13 +1,32 @@
 "use client";
 
+import { UserAuth } from '@/context/authContext';
+import { login } from '@/utils/auth';
 import Link from 'next/link'
-import React from 'react'
+import { useRef } from 'react'
 
-const page = () => {
-    const handleLogin = (e: React.FormEvent<HTMLFormElement>) => {
+const Page = () => {
+    const emailRef = useRef<HTMLInputElement>(null);
+    const passwordRef = useRef<HTMLInputElement>(null);
+
+    const { signInWithGoogle } = UserAuth();
+
+    const handleLogin = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
 
         // login logic...
+        if (!emailRef.current?.value || !passwordRef.current?.value) return
+
+        try {
+            const creadencials = {
+                email: emailRef.current?.value,
+                password: passwordRef.current?.value
+            }
+
+            await login(creadencials);
+        } catch (error) {
+            console.log(`Error logging in: ${error}`);
+        }
     }
 
     return (
@@ -16,8 +35,8 @@ const page = () => {
                 <h1>Login</h1>
 
                 <form className="box column" onSubmit={handleLogin}>
-                    <input className='full-width outline rounded' type="email" name="email" id="email" placeholder='Enter Email' />
-                    <input className='full-width outline rounded' type="password" name="password" id="password" placeholder='Password' />
+                    <input ref={emailRef} className='full-width outline rounded' type="email" name="email" id="email" placeholder='Enter Email' />
+                    <input ref={passwordRef} className='full-width outline rounded' type="password" name="password" id="password" placeholder='Password' />
                     <input className='btn full-width rounded outline' type="submit" value="Login" />
                 </form>
 
@@ -30,11 +49,11 @@ const page = () => {
                     <p>Or</p>
                 </div>
 
-                <button className='full-width danger rounded'>Login With Google</button>
+                <button onClick={signInWithGoogle} className='full-width danger rounded'>Login With Google</button>
             </div>
         </main>
     )
 }
 
-export default page;
+export default Page;
 

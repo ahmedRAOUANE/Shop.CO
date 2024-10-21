@@ -1,3 +1,6 @@
+"use client";
+
+import { UserAuth } from "@/context/authContext";
 import Link from "next/link";
 import { CiSearch } from "react-icons/ci";
 import { FaRegUserCircle } from "react-icons/fa";
@@ -5,6 +8,9 @@ import { IoCartOutline } from "react-icons/io5";
 import { MdMenu } from "react-icons/md";
 
 const Header = () => {
+    const { user } = UserAuth();
+    console.log(`Current User: ${user}`);
+
     return (
         <header>
             <nav className="box nowrap container">
@@ -21,6 +27,8 @@ const Header = () => {
                 </div>
 
                 <div className="box full-width nowrap jc-end">
+                    {/* from the origina Design, this section have been commented because no available designs for their pages */}
+
                     {/* <div className="nav-menu box jc-start">
                         <select name="shop" id="shop" className="hide-in-small">
                             <option value="shop">Shop</option>
@@ -48,12 +56,18 @@ const Header = () => {
                         <button className="hide-in-large icon box">
                             <CiSearch />
                         </button>
-                        <Link href={"/cart"} className="icon box">
-                            <IoCartOutline />
-                        </Link>
-                        <Link href={"/login"} className="icon box">
-                            <FaRegUserCircle />
-                        </Link>
+                        {user ? (
+                            <>
+                                <Link href={"/cart"} className="icon box" title="your cart">
+                                    <IoCartOutline />
+                                </Link>
+                                <Link href={"/profile"} className="icon box" title="view profile">
+                                    <FaRegUserCircle />
+                                </Link>
+                            </>
+                        ) : (
+                            <Link href={"/login"} className="btn rounded">Login</Link>
+                        )}
                     </div>
                 </div>
             </nav>
@@ -62,3 +76,4 @@ const Header = () => {
 }
 
 export default Header
+

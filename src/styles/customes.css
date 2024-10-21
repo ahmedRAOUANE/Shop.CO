@@ -70,6 +70,13 @@
     }
 }
 
+.avatar-placeholder {
+    background-color: var(--grey-color);
+
+    p {
+        text-transform: capitalize;
+    }
+}
 /* website sections */
 main {
     overflow: hidden;
@@ -370,6 +377,8 @@ footer {
 }
 
 .auth {
+    margin-top: 70px !important;
+
     p {
         font-size: 14px;
     }

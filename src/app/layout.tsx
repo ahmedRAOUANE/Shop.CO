@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+import { AuthContextProvider } from "@/context/authContext";
 
 // styles
 import "../styles/globals.css";
@@ -8,8 +11,6 @@ import "../styles/layout.css";
 import "../styles/button.css";
 import "../styles/modal.css";
 import "../styles/customes.css";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: "SHOP.CO",
@@ -26,10 +27,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.className}`}>
-        <Header />
-        {children}
-        <Footer />
+        <AuthContextProvider>
+          <Header />
+          {children}
+          <Footer />
+        </AuthContextProvider>
       </body>
     </html>
   );
 }
+

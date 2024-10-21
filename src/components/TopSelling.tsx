@@ -1,6 +1,6 @@
+import { getProducts } from '@/utils/getData';
 import ProductCard from './ProductCard';
 import { Product } from '@/utils/types';
-import { getProducts } from '@/utils/getData';
 
 const TopSelling = async () => {
     const products: Product[] = await getProducts(4);
