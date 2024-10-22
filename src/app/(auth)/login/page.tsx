@@ -1,12 +1,14 @@
 "use client";
 
-// import { UserAuth } from '@/context/authContext';
+import useAuthRedirect from '@/hooks/useAuthRedirect';
 import { login } from '@/utils/auth';
 import Link from 'next/link'
 import { useRouter } from 'next/navigation';
 import { useRef } from 'react'
 
 const Page = () => {
+    useAuthRedirect("/profile"); // redirect to the profile page if the user is authenticated
+
     const emailRef = useRef<HTMLInputElement>(null);
     const passwordRef = useRef<HTMLInputElement>(null);
 

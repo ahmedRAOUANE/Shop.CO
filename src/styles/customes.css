@@ -93,6 +93,7 @@
 main {
     overflow: hidden;
     margin-top: 70px !important;
+    position: relative;
 
     * {
         max-width: 100%;

@@ -7,8 +7,11 @@ import img from '@/assets/image1.png';
 import { logout } from '@/utils/auth';
 import { useRouter } from 'next/navigation';
 import { UserAuth } from '@/context/AuthContext';
+import useAuthRedirect from '@/hooks/useAuthRedirect';
 
 const UserData = () => {
+    useAuthRedirect("/", true);
+
     const { user } = UserAuth();
     const router = useRouter();
 
@@ -25,8 +28,6 @@ const UserData = () => {
     return (
         <section className='box full-width' style={{ alignItems: "stretch" }}>
             <div className="avatar box center-x center-y outline">
-                {/* <Image src={img} alt={""} /> */}
-
                 {user?.photoURL ? (
                     <Image src={img} alt={user.displayName || ""} />
                 ) : (

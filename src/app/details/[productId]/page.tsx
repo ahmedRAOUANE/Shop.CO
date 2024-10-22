@@ -1,11 +1,9 @@
 import CardPrice from '@/components/CardPrice';
-import ColorSelecting from '@/components/ColorSelecting';
 import Comments from '@/components/Comments';
-import Counter from '@/components/Counter';
 import ProductCard from '@/components/ProductCard';
 import ProductImages from '@/components/ProductImages';
+import ProductOptions from '@/components/ProductOptions';
 import RatingStars from '@/components/RatingStars';
-import SizeSelecting from '@/components/SizeSelecting';
 import { getComments, getProducts, getSingleProduct } from '@/utils/getData';
 import { Comment, Product } from '@/utils/types';
 
@@ -19,7 +17,7 @@ const page = async ({ params: { productId } }: { params: { productId: string } }
   return (
     <main className='product-details container'>
       <div className="box column">
-        <div className="box full-width">
+        <div className="box full-width ai-start">
           <div className="box small-gap full-width" style={{ alignItems: "stretch" }}>
             <ProductImages product={product} />
           </div>
@@ -34,19 +32,7 @@ const page = async ({ params: { productId } }: { params: { productId: string } }
           </div>
         </div>
 
-        <div className="box full-width">
-          <ColorSelecting />
-          <SizeSelecting />
-
-          <div className="count">
-            <h3>Add To Chart</h3>
-
-            <div className="box small-gap">
-              <Counter />
-              <button className='full-width rounded'>Add To Chart</button>
-            </div>
-          </div>
-        </div>
+        <ProductOptions />
 
         <div className="box column full-width">
           <Comments comments={comments} title='Rating And Reviews' />
