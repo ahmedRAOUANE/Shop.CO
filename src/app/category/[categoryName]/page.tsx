@@ -1,7 +1,7 @@
 import PriceRange from '@/components/PriceRange';
 import ProductCard from '@/components/ProductCard';
 import SizeSelecting from '@/components/SizeSelecting';
-import { getProducts } from '@/utils/getData'
+import { getProducts } from '@/utils/getData';
 import { Product } from '@/utils/types';
 import { GiSettingsKnobs } from 'react-icons/gi';
 import { RiArrowRightSLine } from 'react-icons/ri';
