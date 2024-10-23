@@ -41,7 +41,7 @@ const page = async () => {
                                 <button className="icon danger">
                                     <MdDelete />
                                 </button>
-                                <Counter />
+                                <Counter productMaxQuantity={product.maxQuantity} />
                             </div>
                         </div>
                     ))}
