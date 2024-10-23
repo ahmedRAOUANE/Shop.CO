@@ -18,7 +18,7 @@ const ProductImages = ({ product }: { product: Product }) => {
 
     return (
         <>
-            <div className="box column small-gap">
+            <div className="small-imgs box column small-gap">
                 {/* should loop on the availableImages */}
                 {Array.from({ length: 3 }, (_item, idx) => (
                     <button className="icon" key={idx}>
@@ -27,7 +27,7 @@ const ProductImages = ({ product }: { product: Product }) => {
                 ))}
             </div>
 
-            <div className="full-width">
+            <div className="focused-img full-width">
                 <CardImage src={product.image} alt={product.title} className='large-card' />
             </div>
         </>

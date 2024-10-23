@@ -1,20 +1,29 @@
 "use client";
 
+import { RootState } from '@/store';
+import { setItem } from '@/store/cartSlice';
 import React, { useState } from 'react'
 import { FiMinus, FiPlus } from 'react-icons/fi';
+import { useDispatch, useSelector } from 'react-redux';
 
-const Counter = () => {
-    const [count, setCount] = useState(1);
+const Counter = ({ productMaxQuantity }: { productMaxQuantity: number | undefined }) => {
+    const cartItem = useSelector((state: RootState) => state.cart.item);
+
+    const dispatch = useDispatch();
+
+    const [quantity, setquantity] = useState(1);
 
     const increase = () => {
-        if (count < 5) {
-            setCount(prev => prev += 1); // limited by products count
+        if (quantity < (productMaxQuantity || 5)) { // limited by products productMaxQuantity or 5 if undefined
+            setquantity(prev => prev += 1);
+            dispatch(setItem({ ...cartItem, quantity}));
         }
     }
-
+    
     const decrease = () => {
-        if (count > 0) {
-            setCount(prev => prev -= 1);
+        if (quantity >= 1) {
+            setquantity(prev => prev -= 1);
+            dispatch(setItem({ ...cartItem, quantity}));
         }
     }
 
@@ -23,7 +32,7 @@ const Counter = () => {
             <button className="icon box" onClick={decrease}>
                 <FiMinus />
             </button>
-            <span>{count}</span>
+            <span>{quantity}</span>
             <button className="icon box" onClick={increase}>
                 <FiPlus />
             </button>

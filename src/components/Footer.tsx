@@ -19,7 +19,7 @@ const Footer = () => {
             </div>
 
             <div className="footer-links container box ai-start">
-                <div className="box column small-gap full-width ai-start">
+                <div className="description box column small-gap full-width ai-start">
                     <h1>Shop.Co</h1>
                     <p>
                         We have clothes that suits your style and which you’re proud to wear. From women to men.
@@ -43,7 +43,7 @@ const Footer = () => {
                 <div className="box column small-gap full-width jc-start">
                     <h2 className='full-width'>company</h2>
 
-                    <ul className='full-width'>
+                    <ul className='full-width box column small-gap ai-start'>
                         <li>
                             <Link href={"#"}>About</Link>
                         </li>
@@ -62,7 +62,7 @@ const Footer = () => {
                 <div className="box column small-gap full-width jc-start">
                     <h2 className='full-width'>help</h2>
 
-                    <ul className='full-width'>
+                    <ul className='full-width box column small-gap ai-start'>
                         <li>
                             <Link href={"#"}>Customer Support</Link>
                         </li>
@@ -81,7 +81,7 @@ const Footer = () => {
                 <div className="box column small-gap full-width jc-start">
                     <h2 className='full-width'>faq</h2>
 
-                    <ul className='full-width'>
+                    <ul className='full-width box column small-gap ai-start'>
                         <li>
                             <Link href={"#"}>Account</Link>
                         </li>
@@ -100,7 +100,7 @@ const Footer = () => {
                 <div className="box column small-gap full-width jc-start">
                     <h2 className='full-width'>Resources</h2>
 
-                    <ul className='full-width'>
+                    <ul className='full-width box column small-gap ai-start'>
                         <li>
                             <Link href={"#"}>Free eBooks</Link>
                         </li>
@@ -117,7 +117,7 @@ const Footer = () => {
                 </div>
             </div>
 
-            <div className="copyright-and-payment container box">
+            <div className="copyright-and-payment container box text-center">
                 <div className="copyright">
                     <p>Shop.co © 2000-2023, All Rights Reserved</p>
                 </div>

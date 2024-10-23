@@ -1,15 +1,28 @@
 "use client";
 
-import { useState } from "react";
+import { RootState } from "@/store";
+import { setItem } from "@/store/cartSlice";
+import { CartItem } from "@/utils/types";
 import { FaCheck } from "react-icons/fa";
+import { useDispatch, useSelector } from "react-redux";
 
-const ColorSelecting = () => {
-    const availableColors = ["#000", "rgb(240, 240, 240)", "hsl(0, 0%, 46%)"]; // change fepends on the available colors, the colors van be with any format
+/**
+ * @param param {Object} productColors - the list of colors available for the product
+ * @param avilableColors - the other value is a placeholder, needed because the api doesn't provide 
+ *   mutiple colors for the product
+ */
 
-    const [selectedColor, setSelectedColor] = useState(availableColors[0]);
+const ColorSelecting = ({ productColors }: { productColors: CartItem["product"]["colors"] }) => {
+    const cartItem = useSelector((state: RootState) => state.cart.item);
+
+    const dispatch = useDispatch();
+
+    const availableColors = productColors || ["#000", "rgb(240, 240, 240)", "hsl(0, 0%, 46%)"];
+
+    const selectedColor = cartItem?.color || availableColors[0];
 
     const handleChangeColor = (color: string) => {
-        setSelectedColor(color);
+        dispatch(setItem({ ...cartItem, color }));
     }
 
     return (
@@ -31,4 +44,5 @@ const ColorSelecting = () => {
     )
 }
 
-export default ColorSelecting
+export default ColorSelecting;
+

@@ -27,7 +27,7 @@ const page = async ({ params: { categoryName } }: { params: { categoryName: stri
     return (
         <main className='container category'>
             <div className="box ai-start">
-                <div className="box column small-gap paper outline filter-container">
+                <div className="box column small-gap paper outline filter-container hide-in-small">
                     <div className="box full-width flex-0">
                         <h3 className='disable-guitters'>filters</h3>
 
@@ -51,7 +51,7 @@ const page = async ({ params: { categoryName } }: { params: { categoryName: stri
                     <PriceRange />
 
                     <hr className='full-width' />
-                    <SizeSelecting />
+                    <SizeSelecting productSizes={["small", "medium", "large", "x-large"]} />
                 </div>
 
                 <div className="box column full-width cards-container">
@@ -59,9 +59,9 @@ const page = async ({ params: { categoryName } }: { params: { categoryName: stri
                         <h1>{categoryName}</h1>
 
                         <div className="transparent small box">
-                            <span>showing 1-10 products of 100</span>
+                            <span className='hide-in-small'>showing 1-10 products of 100</span>
 
-                            <div className='box small-gap'>
+                            <div className='box small-gap hide-in-small'>
                                 <label htmlFor="sort">Sorted By: </label>
 
                                 <select name="sort" id="sort">
@@ -69,6 +69,10 @@ const page = async ({ params: { categoryName } }: { params: { categoryName: stri
                                     <option value="top selling">Top Selling</option>
                                 </select>
                             </div>
+
+                            <button className='hide-in-large icon'>
+                                <GiSettingsKnobs />
+                            </button>
                         </div>
                     </div>
 

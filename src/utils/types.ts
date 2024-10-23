@@ -16,7 +16,10 @@ export type Product = {
         oldPrice: number,
         newPrice: number,
     },
-    images: []
+    images: [],
+    maxQuantity?: number,
+    colors?: string[],
+    sizes?: string[],
 }
 
 export type Comment = {
@@ -33,3 +36,10 @@ export type AuthContextType = {
     signout: () => Promise<void>,
 }
 
+export type CartItem = {
+    id: number,
+    quantity: number,
+    color?: string,
+    size?: string,
+    product: Product,
+}

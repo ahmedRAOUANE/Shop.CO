@@ -9,7 +9,6 @@ import { MdMenu } from "react-icons/md";
 
 const Header = () => {
     const { user } = UserAuth();
-    console.log(`Current User: ${user}`);
 
     return (
         <header>

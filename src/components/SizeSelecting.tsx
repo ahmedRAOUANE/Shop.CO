@@ -1,14 +1,26 @@
 "use client";
 
-import { useState } from "react";
+import { RootState } from "@/store";
+import { setItem } from "@/store/cartSlice";
+import { useDispatch, useSelector } from "react-redux";
 
-const SizeSelecting = () => {
-    const [selectedSize, setSelectedSize] = useState('Medium');
+/**
+ * @param param {Object} productSizes - the list of sizes available for the product
+ * @param availableSizes - the other value is a placeholder, needed because the api doesn't provide 
+ *   mutiple sizes for the product
+ */
 
-    const availableSizes = ['Small', 'Medium', 'Large', 'X-Large']; // change depends on the available sizes
+const SizeSelecting = ({ productSizes }: { productSizes: string[] | undefined }) => {
+    const cartItem = useSelector((state: RootState) => state.cart.item);
+
+    const dispatch = useDispatch();
+
+    const availableSizes = productSizes || ['Small', 'Medium', 'Large', 'X-Large'];
+
+    const selectedSize = cartItem?.size?.toLocaleLowerCase() || availableSizes[1].toLocaleLowerCase();
 
     const handleSizeClick = (size: string) => {
-        setSelectedSize(size);
+        dispatch(setItem({ ...cartItem, size }));
     }
 
     return (
@@ -18,7 +30,7 @@ const SizeSelecting = () => {
                 {availableSizes.map((size, idx) => (
                     <button
                         key={idx}
-                        className={`rounded ${selectedSize === size && "active"}`}
+                        className={`rounded ${selectedSize === size.toLocaleLowerCase() && "active"}`}
                         onClick={() => handleSizeClick(size)}
                     >
                         {size}
