@@ -14,9 +14,11 @@ const Header = () => {
         <header>
             <nav className="box nowrap container">
                 <div className="box nowrap small-gap">
-                    <button className="icon hide-in-large">
+
+                    {/* this icon exists in the original design, since it is not used it have been commented */}
+                    {/* <button className="icon hide-in-large">
                         <MdMenu />
-                    </button>
+                    </button> */}
 
                     <Link href={"/"}>
                         <h1 className="disable-guitters">
@@ -57,7 +59,7 @@ const Header = () => {
                         </button>
                         {user ? (
                             <>
-                                <Link href={"/cart"} className="icon box" title="your cart">
+                                <Link href={`/cart/${user.uid}`} className="icon box" title="your cart">
                                     <IoCartOutline />
                                 </Link>
                                 <Link href={"/profile"} className="icon box" title="view profile">

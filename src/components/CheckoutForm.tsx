@@ -7,7 +7,7 @@ const inputClassName = "full-width rounded outline"
 const CheckoutForm = () => {
     return (
         <form className="box column">
-            <div className="box ai-start">
+            <div className="input-container box ai-start">
                 <div className="billing-address box column full-width">
                     <div className="user-data box small-gap column ai-start full-width">
                         <h3 className="disable-guitters">User Data</h3>
@@ -42,7 +42,7 @@ const CheckoutForm = () => {
                         </div>
                     </div>
 
-                    <div className="box column ai-start">
+                    <div className="box column ai-start full-width">
                         <h3 className="disable-guitters">Accepted Cards</h3>
 
                         <PaymentMethods />

@@ -21,7 +21,7 @@ const productTypes = [
     },
 ]
 
-const page = async ({ params: { categoryName } }: { params: { categoryName: string } }) => {
+const Category = async ({ params: { categoryName } }: { params: { categoryName: string } }) => {
     const products: Product[] = await getProducts(12);
 
     return (
@@ -56,7 +56,7 @@ const page = async ({ params: { categoryName } }: { params: { categoryName: stri
 
                 <div className="box column full-width cards-container">
                     <div className="box full-width cards-container-header">
-                        <h1>{categoryName}</h1>
+                        <h1>{categoryName.replace("-", " ")}</h1>
 
                         <div className="transparent small box">
                             <span className='hide-in-small'>showing 1-10 products of 100</span>
@@ -87,4 +87,5 @@ const page = async ({ params: { categoryName } }: { params: { categoryName: stri
     )
 }
 
-export default page
+export default Category
+

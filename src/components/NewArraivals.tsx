@@ -1,6 +1,7 @@
 import { getProducts } from '@/utils/getData';
 import ProductCard from './ProductCard';
 import { Product } from '@/utils/types';
+import Link from 'next/link';
 
 const NewArraivals = async () => {
     const products: Product[] = await getProducts(4);
@@ -14,7 +15,7 @@ const NewArraivals = async () => {
                         <ProductCard key={product.id} productData={product} className='column' />
                     ))}
                 </div>
-                <button className='rounded primary outline'>View More</button>
+                <Link href={'category/new-arrivals'} className='btn rounded primary outline'>View More</Link>
             </div>
         </section>
     )

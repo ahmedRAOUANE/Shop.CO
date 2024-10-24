@@ -10,8 +10,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '@/store';
 import { useEffect } from 'react';
 import { setItem } from '@/store/cartSlice';
-import { doc, getDoc, setDoc, updateDoc } from 'firebase/firestore';
-import { db } from '@/utils/firebase';
+import { addProductToCart } from '@/utils/getData';
 
 const ProductOptions = ({ product }: { product: Product }) => {
     const item = useSelector((state: RootState) => state.cart.item);
@@ -26,26 +25,7 @@ const ProductOptions = ({ product }: { product: Product }) => {
         if (!user) {
             router.push("/login");
         } else {
-            // Add to cart logic..
-            try {
-                console.log(`Attemping to add to cart...`);
-                const cartDocRef = doc(db, "userCart", user.uid);
-                const cartDocSnap = await getDoc(cartDocRef);
-
-                if (cartDocSnap.exists()) {
-                    console.log(`Document exists, updating...`);
-                    await updateDoc(cartDocRef, {
-                        items: [...cartDocSnap.data().items, item]
-                    })
-                } else {
-                    console.log(`Dcoument does not exist, creating...`);
-                    await setDoc(cartDocRef, {
-                        items: [item]
-                    })
-                }
-            } catch (error) {
-                console.log(`Error adding to cart: ${error}`);
-            }
+            await addProductToCart(user.uid, item);
         }
     }
 

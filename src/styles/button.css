@@ -96,6 +96,12 @@ input[type="submit"] {
             background-color: var(--grey-color);
         }
     }
+
+    &.disabled {
+        opacity: .75;
+        cursor: not-allowed;
+        pointer-events: none;
+    }
 }
 
 .btn-group {

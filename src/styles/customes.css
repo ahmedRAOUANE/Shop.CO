@@ -354,6 +354,12 @@ footer {
 }
 
 .cart {
+    &>div {
+        @media (max-width: 767px) {
+            flex-direction: column-reverse;
+        }
+    }
+
     .card-group {
         .card-container {
             position: relative;
@@ -390,6 +396,14 @@ footer {
 
         h3 {
             margin-bottom: var(--secondary-padding);
+        }
+    }
+
+    form {
+        .input-container {
+            @media (max-width: 767px) {
+                flex-direction: column;
+            }
         }
     }
 }
@@ -448,6 +462,7 @@ footer {
         }
     }
 }
+
 .product-details {
     .product-info {
         @media (max-width: 767px) {

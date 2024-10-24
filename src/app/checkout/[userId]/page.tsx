@@ -1,7 +1,9 @@
 import CardImage from "@/components/CardImage";
 import CheckoutForm from "@/components/CheckoutForm";
-import { getProducts } from "@/utils/getData"
-import { Product } from "@/utils/types";
+import SammaryData from "@/components/SammaryData";
+import { getProducts, getProductsFromCart } from "@/utils/getData"
+import { CartItem, Product } from "@/utils/types";
+import { get } from "http";
 
 // dummy data for building the logic
 const summaryContent = [
@@ -19,8 +21,8 @@ const summaryContent = [
     },
 ]
 
-const page = async () => {
-    const products: Product[] = await getProducts(5);
+const Checkout = async ({ params: { userId } }: { params: { userId: string } }) => {
+    const products: CartItem[] = await getProductsFromCart(userId);
 
     const total = summaryContent.reduce((acc, item) => acc + item.value, 0);
 
@@ -37,27 +39,15 @@ const page = async () => {
                     <h3 className="disable-guitters">Order Summary</h3>
 
                     <div className="summary-body box column small-gap ai-start">
-                        {summaryContent.map((item, index) => (
-                            <div className="box full-width" key={index}>
-                                <strong>{item.title}</strong>
-                                <span>${item.value}</span>
-                            </div>
-                        ))}
+                        <SammaryData initialItems={products} userid={userId} />
 
-                        <hr className="full-width" />
-
-                        <div className="box full-width">
-                            <strong>Total</strong>
-                            <span>${total}</span>
-                        </div>
-
-                        <div className="box column ai-start" style={{gap: 0}}>
+                        <div className="box column ai-start full-width" style={{ gap: 0 }}>
                             <h3 className="disable-guitters">
                                 Your Products
                             </h3>
 
                             <div className="card-group box full-width small-gap">
-                                {products.map(product => (
+                                {products.map(({ product }) => (
                                     <CardImage src={product.image} alt={product.title} key={product.id} />
                                 ))}
                             </div>
@@ -69,5 +59,5 @@ const page = async () => {
     )
 }
 
-export default page
+export default Checkout
 
