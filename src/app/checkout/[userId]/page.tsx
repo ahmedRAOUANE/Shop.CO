@@ -4,22 +4,6 @@ import SammaryData from "@/components/SammaryData";
 import { getProductsFromCart } from "@/utils/getData"
 import { CartItem } from "@/utils/types";
 
-// dummy data for building the logic
-const summaryContent = [
-    {
-        title: "Subtotal",
-        value: 200
-    },
-    {
-        title: "Discount",
-        value: 115
-    },
-    {
-        title: "Delevery fee",
-        value: 15
-    },
-]
-
 const Checkout = async ({ params: { userId } }: { params: { userId: string } }) => {
     const products: CartItem[] = await getProductsFromCart(userId);
 
