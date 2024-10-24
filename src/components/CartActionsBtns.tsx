@@ -1,7 +1,6 @@
 "use client";
 
 import { deleteProductFromCart } from '@/utils/getData'
-import { Product } from '@/utils/types'
 import React from 'react'
 import { MdDelete } from 'react-icons/md'
 

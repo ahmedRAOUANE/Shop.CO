@@ -23,8 +23,6 @@ const summaryContent = [
 const Checkout = async ({ params: { userId } }: { params: { userId: string } }) => {
     const products: CartItem[] = await getProductsFromCart(userId);
 
-    const total = summaryContent.reduce((acc, item) => acc + item.value, 0);
-
     return (
         <main className="cart container box column small-gap">
             <h1 className="full-width flex-0 disable-guitters">Checkout</h1>

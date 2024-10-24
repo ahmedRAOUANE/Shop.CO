@@ -31,7 +31,15 @@ const ProductOptions = ({ product }: { product: Product }) => {
 
     useEffect(() => {
         if (product) {
-            dispatch(setItem({ ...item, id: product.id, color: product.colors ? product.colors[0] : "#000", size: product.sizes ? product.sizes[1] : "medium", product }));
+            dispatch(setItem(
+                {
+                    ...item,
+                    id: product.id,
+                    color: product.colors ? product.colors[0] : "#000",
+                    size: product.sizes ? product.sizes[1] : "medium",
+                    product
+                }
+            ));
         }
     }, [product, dispatch]);
 
