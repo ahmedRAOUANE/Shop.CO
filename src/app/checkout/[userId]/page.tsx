@@ -1,9 +1,8 @@
 import CardImage from "@/components/CardImage";
 import CheckoutForm from "@/components/CheckoutForm";
 import SammaryData from "@/components/SammaryData";
-import { getProducts, getProductsFromCart } from "@/utils/getData"
-import { CartItem, Product } from "@/utils/types";
-import { get } from "http";
+import { getProductsFromCart } from "@/utils/getData"
+import { CartItem } from "@/utils/types";
 
 // dummy data for building the logic
 const summaryContent = [

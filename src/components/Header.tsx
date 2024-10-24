@@ -5,7 +5,6 @@ import Link from "next/link";
 import { CiSearch } from "react-icons/ci";
 import { FaRegUserCircle } from "react-icons/fa";
 import { IoCartOutline } from "react-icons/io5";
-import { MdMenu } from "react-icons/md";
 
 const Header = () => {
     const { user } = UserAuth();

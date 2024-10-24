@@ -1,11 +1,8 @@
 "use client";
 
 import useCheckCartChanges from '@/hooks/useCheckCartChanges';
-import { db } from '@/utils/firebase';
 import { CartItem } from '@/utils/types'
-import { doc, onSnapshot } from 'firebase/firestore';
 import Link from 'next/link'
-import React, { useEffect, useState } from 'react'
 import { BsFillTagFill } from 'react-icons/bs'
 import { FaArrowRightLong } from 'react-icons/fa6'
 

@@ -1,7 +1,7 @@
 import { db } from '@/utils/firebase';
 import { CartItem } from '@/utils/types';
 import { doc, onSnapshot } from 'firebase/firestore';
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 /**
  *  listen to changes in the items array inside the userCart 
@@ -23,7 +23,7 @@ const useCheckCartChanges = (userId: string, initialItems: CartItem[]) => {
         })
 
         return () => unseb();
-    }, [items]);
+    }, [items, userId]);
 
     return { items }
 }

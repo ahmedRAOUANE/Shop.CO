@@ -5,7 +5,7 @@ import { Product } from '@/utils/types'
 import React from 'react'
 import { MdDelete } from 'react-icons/md'
 
-const CartActionsBtns = ({ userId, productId, quantity, product }: { userId: string, productId: number, quantity: number, product?: Product }) => {
+const CartActionsBtns = ({ userId, productId, quantity, /*product*/ }: { userId: string, productId: number, quantity: number, /*product?: Product*/ }) => {
     
     return (
         <div className="box column ai-end">

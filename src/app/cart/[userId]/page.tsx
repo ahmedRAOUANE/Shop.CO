@@ -1,14 +1,8 @@
-import CartActionsBtns from "@/components/CartActionsBtns";
 import CartConfirmBtns from "@/components/CartConfirmBtns";
 import CartProducts from "@/components/CartProducts";
-import ProductCard from "@/components/ProductCard";
 import SammaryData from "@/components/SammaryData";
 import { getProductsFromCart } from "@/utils/getData";
-import { CartItem, Product } from "@/utils/types";
-import Link from "next/link";
-import { BsFillTagFill } from "react-icons/bs";
-import { FaArrowRightLong } from "react-icons/fa6";
-import { MdDelete } from "react-icons/md";
+import { CartItem } from "@/utils/types";
 
 const Cart = async ({ params: { userId } }: { params: { userId: string } }) => {
     const products: CartItem[] = await getProductsFromCart(userId);

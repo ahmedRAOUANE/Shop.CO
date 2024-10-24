@@ -1,11 +1,8 @@
 "use client";
 
 import { CartItem } from '@/utils/types'
-import React, { useEffect, useState } from 'react'
 import ProductCard from './ProductCard'
 import CartActionsBtns from './CartActionsBtns'
-import { doc, onSnapshot } from 'firebase/firestore';
-import { db } from '@/utils/firebase';
 import useCheckCartChanges from '@/hooks/useCheckCartChanges';
 
 const CartProducts = ({ initialItems, userId }: { initialItems: CartItem[], userId: string }) => {
@@ -19,7 +16,7 @@ const CartProducts = ({ initialItems, userId }: { initialItems: CartItem[], user
                         items.map(({ product, quantity, id }) => (
                             <div key={id} className="card-container box nowrap full-width">
                                 <ProductCard productData={product} className="ai-start" />
-                                <CartActionsBtns userId={userId} productId={id} quantity={quantity} product={product} />
+                                <CartActionsBtns userId={userId} productId={id} quantity={quantity} />
                             </div>
                         ))
                     }
